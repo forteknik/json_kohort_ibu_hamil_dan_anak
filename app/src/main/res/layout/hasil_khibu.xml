@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ibu"
+            app:srcCompat="@drawable/ibu" />
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/header_cover_image"
+            android:background="@android:color/holo_blue_bright"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/tv_nama_pasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="Nama Pasien"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_idpasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/tv_noktp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"
+                android:text="(ID)"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_noktp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_nama_pasien"
+                android:layout_centerInParent="true"
+                android:text="      "
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_layout"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="3dp">
+            //Title
+
+            //ISI
+
+            <ImageView
+                android:id="@+id/img_infoskor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="8dp"
+
+                android:layout_marginStart="8dp"
+                android:onClick="info_skor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nilaianc"
+                app:srcCompat="@drawable/ic_info_outline_light_blue_400_24dp" />
+
+            <TextView
+                android:id="@+id/tv_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:text="Nilai ANC :"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout4" />
+
+            <TextView
+                android:id="@+id/tv_nilaianc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:text="ANC"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_13" />
+
+            <TextView
+                android:id="@+id/judulkohortibu"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Hasil"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TableLayout
+                android:id="@+id/tableLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+                tools:layout_editor_absoluteX="0dp"
+                tools:ignore="MissingConstraints">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_red_light">
+
+                    <TextView
+                        android:id="@+id/tv_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:paddingTop="15dp"
+                        android:text="Keluhan Sekarang: "
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_nilaianc"
+                        tools:layout_editor_absoluteX="10dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_red_light">
+
+                    <TextView
+                        android:id="@+id/tv_keluhanSekarang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_12"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="Keluhan"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_12"
+                        app:layout_constraintStart_toEndOf="@+id/tv_12"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_15" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/holo_blue_light">
+
+                    <TextView
+                        android:id="@+id/tv_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:paddingTop="15dp"
+                        android:text="Hasil Labolatorium:"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_keluhanSekarang" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_blue_light">
+
+                    <TextView
+                        android:id="@+id/tv_hasillab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="3dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="hasil lab"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_16"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="5dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/holo_green_light">
+
+                    <TextView
+                        android:id="@+id/tv_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:paddingTop="15dp"
+                        android:text="Saran Bidan: "
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_hasillab" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_green_light">
+
+                    <TextView
+                        android:id="@+id/tv_saranBidan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_15"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="Saran"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_18"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="5dp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_bright"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/judulkohortibu">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light">
+
+                    <TextView
+                        android:id="@+id/tv_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Tanggal Pemeriksaan"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_tanggalPemeriksaan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="tanggal pemeriksaan"
+                        app:layout_constraintStart_toEndOf="@+id/tv_0"
+                        app:layout_constraintTop_toBottomOf="@+id/judulkohortibu" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Usia Kehamilan"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_3" />
+
+                    <TextView
+                        android:id="@+id/tv_usiahamil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="umur"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_5"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_bbdetail" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light">
+
+                    <TextView
+                        android:id="@+id/tv_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Tingkat Kesadaran"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_5" />
+
+                    <TextView
+                        android:id="@+id/tv_tk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="TK"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_6"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_usiahamil" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Tinggi Fundus"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_7" />
+
+                    <TextView
+                        android:id="@+id/tv_tfundus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="TF"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_8"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_detakjantung" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light">
+
+                    <TextView
+                        android:id="@+id/tv_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Letak Janin"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_8" />
+
+                    <TextView
+                        android:id="@+id/tv_letakjanin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="janin"
+                        app:layout_constraintStart_toEndOf="@+id/tv_9"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tfundus" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="Detak Jantung"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detakjantung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="Detak Jantung"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_7"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tk" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light">
+
+                    <TextView
+                        android:id="@+id/tv_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="Kaki Bengkak "
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_9" />
+
+                    <TextView
+                        android:id="@+id/tv_kakibengkak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:text="kaki" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:text="Tindakan"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_saranBidan" />
+
+                    <TextView
+                        android:id="@+id/tv_tindakan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_16"
+                        android:layout_margin="3dp"
+                        android:clickable="true"
+                        android:text="Tindakan"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_19"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="81dp" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_blue_dark"
+                android:padding="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout3">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_1"
+                        android:layout_width="114dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Tekanan Darah:"
+                        android:textColor="@android:color/background_light"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_0" />
+
+                    <TextView
+                        android:id="@+id/tv_tddetail"
+                        android:layout_width="109dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="TD"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintStart_toEndOf="@+id/tv_1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tanggalPemeriksaan" />
+
+                    <TextView
+                        android:id="@+id/tv_td"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="TD"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintStart_toEndOf="@+id/tv_tddetail"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tanggalPemeriksaan" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Lingkar Perut:"
+                        android:textColor="@android:color/background_light"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+                    <TextView
+                        android:id="@+id/tv_lpdetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="TD"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintStart_toEndOf="@+id/tv_2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tddetail" />
+
+                    <TextView
+                        android:id="@+id/tv_lp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="LP"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_2"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lpdetail"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="Berat Badan"
+                        android:textColor="@android:color/background_light"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_2" />
+
+                    <TextView
+                        android:id="@+id/tv_bbdetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="TD"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintStart_toEndOf="@+id/tv_3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_lpdetail" />
+
+                    <TextView
+                        android:id="@+id/tv_bb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="3dp"
+                        android:clickable="true"
+                        android:padding="2dp"
+                        android:text="bb"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintStart_toEndOf="@+id/tv_bbdetail"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_lp" />
+
+                </TableRow>
+            </TableLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

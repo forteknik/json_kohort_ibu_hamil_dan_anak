@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Aplikasi Kohort Ibu</string>
+
+    //ALARM
+    <string name="alarm_on_toast">Stand Up Alarm On!</string>
+    <string name="alarm_off_toast">Stand Up Alarm Off!</string>
+    <string name="notification_title">Kohort Ibu Hamil dan Anak</string>
+    <string name="notification_text">Hari Ini Adalah Jadwal Anda untuk melakukan Pemeriksaan, Segera Kunjungi Puskesmas Sebelum Jam 02:00 PM </string>
+    <string name="toggle_label">Kohort Ibu Hamil</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.forteknik.kohort">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/woman"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Menu.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Menu.InformasiKehamilan" android:label="Informasi Kehamilan"/>
+        <activity android:name=".Menu.MenuUtama"/>
+        <activity android:name=".Menu.Data.JSON_KHProfil" android:label="Profil"/>
+        <activity android:name=".Menu.TipsMakananIbuHamil" android:label="Tips Makanan"/>
+        <activity android:name=".Menu.Data.JSON_KHIbu" android:label="Hasil Kohort Ibu" />
+        <activity android:name=".Menu.Data.JSON_KHNifas" android:label="Hasil Kohort Nifas"/>
+        <activity android:name=".Menu.Data.JSON_KHBayi" android:label="Hasil Kohort Bayi"/>
+        <activity android:name=".Menu.Data.JSON_KHBalita" android:label="Hasil Kohort Balita"/>
+        <activity android:name=".Menu.HasilPemeriksaan"></activity>
+        <activity android:name=".Menu.JadwalPemeriksaan"  android:label="Jadwal Pemeriksaan"/>
+        <activity android:name=".AlarmNotification.TambahAlarm" android:label="Tambah Alarm"></activity>
+        <activity android:name=".Menu.Data.ListKohort.DaftarKHIbu"></activity>
+        <activity android:name=".Menu.Data.ListKohort.DaftarKHBayi"/>
+        <activity android:name=".Menu.Data.ListKohort.DaftarKHBalita"/>
+        <activity android:name=".AlarmNotification.feedback_notifikasi"/>
+        <activity android:name=".Menu.Tentang" android:theme="@style/AppTheme.PopupTheme"  android:label="Tentang"></activity>
+        <activity android:name=".Menu.Logout" android:theme="@style/AppTheme.PopupTheme" android:label="Log Out"></activity>
+        <activity android:name=".Menu.Data.ListKohort.JSON_NPIbu" android:label="Hasil Nilai" />
+        <activity android:name=".Menu.InfoSkor"/>
+
+        <receiver android:name=".StartOnBootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".AlarmNotification.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <!--android:permission="android.intent.action.BOOT.COMPLETED">-->
+            <intent-filter>
+                <action android:name="com.forteknik.kohort.ACTION_NOTIFY" />
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            </intent-filter>
+        </receiver>
+        <service android:name=".AlarmNotification.NotificationService"/>
+    </application>
+
+</manifest>

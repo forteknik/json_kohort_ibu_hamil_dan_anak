@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_pesan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="167dp"
+        android:padding="5dp"
+        android:text="Pesan "
+        android:textAlignment="center"
+        android:textStyle="normal"></TextView>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="242dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="182dp"
+        android:background="@color/colorPrimary"
+        android:onClick="ok"
+        android:text="OK"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_tmb_hari"
+        android:layout_width="241dp"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="tmbHari"
+        android:text="Ingatkan Lagi Nanti"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="131dp"
+        android:layout_height="113dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        app:srcCompat="@drawable/woman" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_pesan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-167dp"
+        android:text="Ayo Ke Puskesmas"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>
